@@ -15,7 +15,7 @@ function App() {
             </div>
             <div className="footer">
                 This project was coded by Nataliia Matvieiko and is
-                <a href="https://github.com/Nataliia-Matvieiko/Weather-React-App">open-sourced on GitHub </a>
+                <a href="https://github.com/Nataliia-Matvieiko/Weather-React-App"> open-sourced on GitHub </a>
             </div>
         </>
     );
