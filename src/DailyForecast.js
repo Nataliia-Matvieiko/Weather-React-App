@@ -4,21 +4,24 @@ import axios from "axios";
 
 export default function DailyForecast(props) {
     let [weatherData, setWeatherData] = useState(undefined);
-    let coordinates = props.coordinates;
+    let city = props.city;
+
+    console.log(weatherData)
 
     function showTemperature(response) {
         setWeatherData(response.data);
     }
 
-    const fetchWeatherData = useCallback( () => {
-        let apiKey = "be81f193e065bf5feb2d944c7336968b";
-        let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    const fetchWeatherData = useCallback(() => {
+        let apiKey = "871226bt3b923e3o0bf9dcaf40d32e00";
+        let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
         axios.get(apiUrl).then(showTemperature);
-    }, [coordinates.lat, coordinates.lon])
+    }, [city])
 
     useEffect(function () {
+        setWeatherData(undefined)
         fetchWeatherData()
-    }, [coordinates, fetchWeatherData])
+    }, [city, fetchWeatherData])
 
     if (weatherData === undefined) return <div>Loading</div>
 

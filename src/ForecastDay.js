@@ -3,8 +3,8 @@ import WeatherIcon from "./WeatherIcon";
 
 export default function ForecastDay(props) {
     let day = props.day;
-    let icon = day.weather[0].icon
-    console.log(day);
+    let icon = day.condition.icon
+    // console.log(day);
 
     function formatDay(timestamp) {
         let date = new Date(timestamp * 1000)
@@ -17,11 +17,11 @@ export default function ForecastDay(props) {
 
     return (
         <div className="forecast-day">
-            <div className="weather-forecast-date">{formatDay(day.dt)}</div>
+            <div className="weather-forecast-date">{formatDay(day.time)}</div>
             <WeatherIcon icon={icon}/>
             <div className="weather-forecast-temperatures">
-                <span className="weather-forecast-temperature-max">{Math.round(day.temp.max)}°/ </span>
-                <span className="weather-forecast-temperature-min"> {Math.round(day.temp.min)}°</span>
+                <span className="weather-forecast-temperature-max">{Math.round(day.temperature.maximum)}°/ </span>
+                <span className="weather-forecast-temperature-min"> {Math.round(day.temperature.minimum)}°</span>
             </div>
         </div>
     );

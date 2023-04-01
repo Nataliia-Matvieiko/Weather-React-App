@@ -9,6 +9,8 @@ export default function CurrentWeather() {
     let [weatherData, setWeatherData] = useState(undefined);
     let [city, setCity] = useState("");
 
+    // console.log(weatherData)
+
     function showTemperature(response) {
         setWeatherData(response.data);
     }
@@ -42,6 +44,7 @@ export default function CurrentWeather() {
     function handleSubmit(event) {
         event.preventDefault();
         fetchWeatherData(city);
+        console.log(city)
     }
 
     function currentLocationClick(event) {

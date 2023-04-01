@@ -37,4 +37,19 @@ images.set("13n", image_13n)
 images.set("50d", image_50d)
 images.set("50n", image_50n)
 
-export const getWeatherImage = (image) => images.get(image);
+images.set("broken-clouds-day", image_03d)
+images.set("rain-day", image_09d)
+images.set("clear-sky-day", image_01d)
+images.set("scattered-clouds-day", image_02d)
+images.set("snow-day", image_13d)
+images.set("few-clouds-day", image_03n)
+
+
+export const getWeatherImage = (image) => {
+    const icon = images.get(image);
+    if(!icon) {
+        console.log(image)
+        return image_01d;
+    }
+    return icon;
+};

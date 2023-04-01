@@ -25,10 +25,11 @@ export default function WeatherData(props) {
         return `${day} ${hour}:${minute}`;
     }
 
-    let {name, dt, main: {humidity, temp}, wind: {speed}, weather, coord} = props.data;
+    let {name, dt, main: {humidity, temp}, wind: {speed}, weather} = props.data;
     let date = formatTime(new Date(dt * 1000));
     let description = weather[0].main;
     let weatherIcon = weather[0].icon;
+    let city = name;
 
     return (
         <>
@@ -56,7 +57,7 @@ export default function WeatherData(props) {
                     <div id="current-wind">Wind: {Math.round(speed)} km/h</div>
                 </div>
             </div>
-            <DailyForecast coordinates={coord}/>
+            <DailyForecast city={city}/>
         </>
     );
 }
