@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useCallback} from "react";
 import CityLinks from "./CityLinks";
 import Button from "./Button";
 import WeatherData from "./WeatherData";
@@ -19,14 +19,14 @@ export default function CurrentWeather() {
 
     let apiKey = "3a94f3778290bfeee61278505dbbe51d"
 
-    function fetchWeatherData(city) {
+    const fetchWeatherData = useCallback((city) => {
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${
             city
         }&appid=${apiKey}&units=metric`;
         axios.get(url).then(showTemperature);
-    }
+    }, [apiKey])
 
-    function showPosition(position) {
+    const showPosition = (position) => {
         let latitude = position.coords.latitude;
         let longitude = position.coords.longitude;
 
@@ -37,7 +37,7 @@ export default function CurrentWeather() {
 
     useEffect(function () {
         fetchWeatherData("Berdiansk")
-    }, [])
+    }, [fetchWeatherData])
 
     function handleSubmit(event) {
         event.preventDefault();
