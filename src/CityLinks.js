@@ -3,8 +3,7 @@ import CityLink from "./CityLink";
 export default function cityLinks(props) {
     return (
         <div className="row cities">
-            <CityLink
-                city="Dnipro"
+            <CityLink city="Dnipro"
                 onClick={(city) => props.onClick(city)}
             />
             <CityLink city="Kharkiv"

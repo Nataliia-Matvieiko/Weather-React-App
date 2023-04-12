@@ -1,5 +1,5 @@
 html, body {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'DynaPuff', cursive;
     height: 100%;
 }
 
@@ -21,6 +21,12 @@ body {
     width: 190px;
 }
 
+@media (max-width: 767px) {
+    .logo-she-codes {
+        margin-bottom: 15px;
+    }
+}
+
 .loader-container {
     text-align: center;
 }
@@ -31,26 +37,29 @@ body {
     background-image: url("./images/background-drops.png");
     border: 1px solid black;
     border-radius: 15px;
-    max-width: 700px;
     opacity: 70%;
     padding: 20px;
 }
 
 .cities {
     align-items: center;
-    font-size: 17px;
+    font-size: 15px;
     margin: 0;
-    padding: 15px 0 20px;
+    padding: 15px 0 15px;
 }
 
 .cities span:hover {
     color: #2c284a;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
     .cities {
         display: none;
     }
+}
+
+span.col-2 {
+    padding: 0;
 }
 
 .form-control {
@@ -99,6 +108,13 @@ ul {
     padding-bottom: 0;
 }
 
+@media (max-width: 600px) {
+    ul {
+        font-size: 20px;
+        list-style-type: none;
+    }
+}
+
 img.main-icon {
     height: 90px;
     margin: 0 0 40px 150px;
@@ -108,7 +124,9 @@ img.main-icon {
 
 @media (max-width: 600px) {
     img.main-icon {
-        margin: 0 0 40px 10px;
+        height: 50px;
+        margin: 0 0 40px 105px;
+        width: 50px;
     }
 }
 
@@ -120,10 +138,23 @@ img.main-icon {
     margin-left: 20px;
 }
 
+@media (max-width: 600px) {
+    .temperature {
+        font-size: 50px;
+        margin-left: 10px;
+    }
+}
+
 .units {
     font-size: 20px;
     position: relative;
     top: -50px;
+}
+
+@media (max-width: 600px) {
+    .units {
+        top: -30px;
+    }
 }
 
 .position-windy-humidity {
@@ -132,12 +163,37 @@ img.main-icon {
     padding: 80px 0 0 0;
 }
 
+@media (max-width: 600px) {
+    .position-windy-humidity {
+        font-size: 16px;
+    }
+}
+
 #forecast {
-    overflow-x:auto;
-    padding-left: 4px;
     display: flex;
     flex-wrap: nowrap;
+    margin: 0 auto;
+    overflow-x: auto;
+    padding-left: 4px;
     width: 100%;
+}
+
+@media (min-width: 350px) {
+    #forecast {
+        max-width: 350px;
+    }
+}
+
+@media (min-width: 450px) {
+    #forecast {
+        max-width: 450px;
+    }
+}
+
+@media (min-width: 550px) {
+    #forecast {
+        max-width: 550px;
+    }
 }
 
 .forecast-day {
@@ -146,9 +202,15 @@ img.main-icon {
     border-radius: 15px;
     line-height: 30px;
     margin: 0 15px;
+    min-width: 80px;
     padding: 0 0 15px;
     text-align: center;
-    min-width: 80px;
+}
+
+@media (max-width: 550px) {
+    .forecast-day {
+        margin: 2px;
+    }
 }
 
 .weather-forecast-date {
@@ -162,6 +224,8 @@ img.main-icon {
 
 .footer {
     font-size: 15px;
+    padding: 20px 20px 0;
+    text-align: center;
 }
 
 .footer a {

@@ -46,7 +46,6 @@ images.set("rain-day", image_10d)
 images.set("thunderstorm-day", image_11d)
 images.set("snow-day", image_13d)
 images.set("mist-day", image_50d)
-
 images.set("clear-sky-night", image_01n)
 images.set("few-clouds-night", image_02n)
 images.set("scattered-clouds-night", image_03n)

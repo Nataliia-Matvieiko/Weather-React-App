@@ -38,7 +38,7 @@ export default function CurrentWeather() {
     }
 
     useEffect(function () {
-        fetchWeatherData("Berdiansk")
+        fetchWeatherData("Wrocław")
     }, [fetchWeatherData])
 
     function handleSubmit(event) {
